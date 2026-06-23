@@ -5,8 +5,17 @@ theme: minima
 minima:
   skin: auto
 
-header_pages:
-  - about.md
-  - pages/placeholder.md
+header_pages: []
 
 markdown: kramdown
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: tree-page
+  - scope:
+      path: index.md
+    values:
+      layout: tree-home

@@ -1,0 +1,8 @@
+<nav class="tree-nav">
+  <div class="tree-nav-title">目录</div>
+  <ul class="tree-nav-list">
+    {%- for item in include.nav -%}
+      {%- include tree-nav-item.html item=item -%}
+    {%- endfor -%}
+  </ul>
+</nav>
