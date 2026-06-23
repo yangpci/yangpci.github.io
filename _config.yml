@@ -2,20 +2,4 @@ title: yangpci
 description: 个人主页
 theme: minima
 
-minima:
-  skin: auto
-
-header_pages: []
-
 markdown: kramdown
-
-defaults:
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: tree-page
-  - scope:
-      path: index.md
-    values:
-      layout: tree-home
