@@ -7,5 +7,6 @@ minima:
 
 header_pages:
   - about.md
+  - pages/placeholder.md
 
 markdown: kramdown
