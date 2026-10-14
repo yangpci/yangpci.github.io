@@ -1,5 +1,6 @@
 title: yangpci
 description: 个人主页
+lang: zh
 theme: minima
 
 markdown: kramdown
