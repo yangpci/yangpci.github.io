@@ -3,14 +3,13 @@ layout: default
 ---
 
 <article class="essay">
-  <header class="essay-header">
-    <p class="essay-kicker">文字</p>
-    <h1>{{ page.title }}</h1>
-    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y年%-m月%-d日" }}</time>
-  </header>
   <div class="essay-body">
     {{ content }}
   </div>
+  <p class="essay-meta">
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y年%-m月%-d日" }}</time>
+    <span>{{ site.title }}</span>
+  </p>
 </article>
 
 <style>
@@ -19,46 +18,14 @@ layout: default
     color: #2b2723;
   }
 
-  body:has(.essay) .site-header {
-    border-top: none;
-    border-bottom: 1px solid rgba(43, 39, 35, 0.08);
-    background: transparent;
+  body:has(.essay) .site-header,
+  body:has(.essay) .site-footer {
+    display: none;
   }
 
   .essay {
     max-width: 38rem;
-    margin: 1.5rem auto 5rem;
-  }
-
-  .essay-header {
-    margin: 3.2rem 0 3rem;
-    text-align: center;
-  }
-
-  .essay-kicker {
-    margin: 0;
-    color: #8d735c;
-    font-size: 0.78rem;
-    letter-spacing: 0.42em;
-    text-indent: 0.42em;
-  }
-
-  .essay h1 {
-    margin: 0.85rem 0 0.7rem;
-    color: #2b2723;
-    font-family: "Songti SC", "Noto Serif SC", "Source Han Serif SC", Palatino, "Palatino Linotype", serif;
-    font-size: 2.15rem;
-    font-weight: 500;
-    letter-spacing: 0.22em;
-    line-height: 1.4;
-    text-indent: 0.22em;
-  }
-
-  .essay time {
-    color: #9a8d80;
-    font-family: "Songti SC", "Noto Serif SC", Palatino, serif;
-    font-size: 0.92rem;
-    letter-spacing: 0.14em;
+    margin: 4.5rem auto 3rem;
   }
 
   .essay-body {
@@ -81,24 +48,24 @@ layout: default
     line-height: 0.82;
   }
 
-  .essay-body p:last-child {
-    margin: 2.6em 0 0;
-    color: #4e453d;
-    text-align: center;
-    letter-spacing: 0.18em;
+  .essay-meta {
+    margin: 3.2rem 0 0;
+    color: #9a8d80;
+    font-family: "Songti SC", "Noto Serif SC", Palatino, serif;
+    font-size: 0.92rem;
+    letter-spacing: 0.12em;
+    line-height: 1.9;
+    text-align: right;
+  }
+
+  .essay-meta time,
+  .essay-meta span {
+    display: block;
   }
 
   @media (max-width: 600px) {
     .essay {
-      margin-top: 0.4rem;
-    }
-
-    .essay-header {
-      margin-top: 2rem;
-    }
-
-    .essay h1 {
-      font-size: 1.7rem;
+      margin-top: 2.4rem;
     }
 
     .essay-body {
